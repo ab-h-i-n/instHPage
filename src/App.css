@@ -1,0 +1,198 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,
+.app{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+}
+header{
+    margin-top: 1rem;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .7rem .7rem 0px .7rem;
+}
+header .logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 110px;
+    filter: invert();
+}
+.logo p{
+    padding-bottom: .6rem;
+    font-size: 1.5rem;
+}
+.drpdown{
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(46, 46, 46);
+    width: 130px;
+    height: 100px;
+    top :50px;
+    left: 7px;
+    border-radius: 9px;
+}
+.drpdown.show{
+    display:flex;
+}
+.drpdown a{
+    display: flex;
+    padding: .5rem;
+    align-items: center;
+    height: 100%;
+    text-decoration: none;
+    color: white;
+    justify-content: space-between;
+}
+.drpdown a:first-child{
+    border-radius: 9px 9px 0px 0px;
+}
+.drpdown a:last-child{
+    border-radius: 0px 0px 9px 9px;
+}
+.drpdown a:hover,
+.drpdown a:focus{
+    background-color: rgb(154, 154, 154);
+}
+header .icons{
+    display: flex;
+    gap: 1.5rem;
+}
+.stories{
+    overflow-x: scroll;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .3rem;
+    padding-left: .5rem;
+}
+.storie{
+    background-color: black;
+    height: 90px;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    z-index: -3;
+}
+.storie .container{
+    height: 55px;
+    width: 55px;
+    border-radius: 50%;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+   outline: 3px solid black;
+}
+.storie img{
+    width: 100%;
+    
+}
+.storie p{
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: .8rem;
+}
+.Othstories{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .3rem;
+}
+.storie .container::before{
+    content: " ";
+    height: 65px;
+    width: 65px;
+    transform: translate(-5px, -5px);
+    position: absolute;
+    background: linear-gradient(228deg, rgb(135, 47, 195) 0%, rgb(253, 29, 78) 50%, rgba(252,176,69,1) 100%);
+    border-radius: 50%;
+    z-index: -1;
+}
+.main{
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 5rem;
+}
+.post{
+    width: 100%;
+    height: auto;
+    margin: 1rem 0px;
+}
+.post-header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem;
+}
+.post-header .profile{
+    display:  flex;
+    align-items: center;
+    gap: .5rem;
+}
+.post-header img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
+.post-header h1{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.post .pic{
+    width: auto;
+    max-width: 500px;
+    max-height: 500px;
+    min-width: 400px;
+}
+.post .buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+}
+.post .buttons .left{
+    display: flex;
+    gap: 1rem;
+}
+.post .desc{
+    padding-left: .5rem;
+}
+.desc p{
+    margin-top: .5rem;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* padding:0px 1rem;
+    gap: 1rem; */
+}
+.profile-set img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+}
