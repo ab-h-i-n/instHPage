@@ -17,7 +17,7 @@ const details = [
       name: "your_name",
       dp: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPa-xju39Z_rKRxfA-bsejPIitLfDOopF7t9N2I45T1Q&usqp=CAU&ec=48600112",
       img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzp-4UV2nKZPbXa1ZMihYG-hwNUXwhq8TAYwciMFHI8tZV5VlqUjkbCjA2yqQhkKAoqzxM7SjmBQw&usqp=CAU&ec=48600112",
-      likes: "5M",
+      likes: 99,
       caption:"📸Your name....? "
     }
   ];

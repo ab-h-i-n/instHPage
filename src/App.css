@@ -79,14 +79,12 @@ header .icons{
     padding-left: .5rem;
 }
 .storie{
-    background-color: black;
     height: 90px;
     width: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    z-index: -3;
 }
 .storie .container{
     height: 55px;
@@ -96,6 +94,7 @@ header .icons{
     overflow: hidden;
     text-overflow: ellipsis;
    outline: 3px solid black;
+   transform: translateY(-3px);
 }
 .storie img{
     width: 100%;
@@ -114,15 +113,14 @@ header .icons{
     justify-content: flex-start;
     gap: .3rem;
 }
-.storie .container::before{
-    content: " ";
+.ring{
     height: 65px;
     width: 65px;
-    transform: translate(-5px, -5px);
-    position: absolute;
     background: linear-gradient(228deg, rgb(135, 47, 195) 0%, rgb(253, 29, 78) 50%, rgba(252,176,69,1) 100%);
     border-radius: 50%;
-    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .main{
     width: 100%;

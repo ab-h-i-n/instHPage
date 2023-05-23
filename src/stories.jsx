@@ -6,8 +6,10 @@ function Storie() {
     <div className='Othstories'>
       {details.map((story, index) => (
         <div className='storie' key={index}>
-          <div className="container">
-            <img src={story.dp} alt={story.name} />
+          <div className='ring'>
+            <div className="container">
+              <img src={story.dp} alt={story.name} />
+            </div>
           </div>
           <p>{story.name}</p>
         </div>

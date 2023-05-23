@@ -17,7 +17,9 @@ function Post({dp,name,img,likes,Cap}){
       setLiked(!liked);
     };
     const likeIcon = liked ? <FavoriteIcon style={{ color: red[500] }}/> : <FavoriteBorderIcon />;
-  
+    if(liked){
+        likes++;
+    }
 
     const [saved , setSaved] = useState(false);
     const handleSave = ()=>{
