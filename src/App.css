@@ -203,7 +203,7 @@ footer a svg{
     font-size: large;
     color:white;
 }
-.active svg{
+footer .active svg{
     transition: 150ms;
     transform: scale(1.4);
 }
@@ -313,3 +313,42 @@ button.addfollowing{
 .newhigh p{
     font-size: .8rem;
 }
+.profile-page .buttons{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    place-content: center;
+    margin: .5rem;
+    padding: .3rem;
+}
+.profile-page .buttons .btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-page .buttons .btn.active svg{
+    transition: 100ms;
+    transform: scale(1.1);
+}
+.profile-page .contents {
+    overflow-x: hidden;
+}
+.contents .contents-container{
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+}
+.Posts-container,
+.Reels-container,
+.Tags-container{
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    flex-shrink: 0;
+    width: 100%;
+}
+.Posts-container{background-color: red;}
+.Reels-container{background-color: blue;}
+.Tags-container{background-color: green;}
