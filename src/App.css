@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
 }
 body,
 .app{
@@ -9,9 +11,22 @@ body,
     width: 100vw;
     background-color: black;
     color: white;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.noSelect {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.noSelect:focus {
+    outline: none !important;
 }
 header{
-    margin-top: 1rem;
     position: relative;
     width: 100%;
     display: flex;
@@ -27,10 +42,6 @@ header .logo{
     width: 110px;
     filter: invert();
 }
-.logo p{
-    padding-bottom: .6rem;
-    font-size: 1.5rem;
-}
 .drpdown{
     display: none;
     position: absolute;
@@ -42,6 +53,7 @@ header .logo{
     top :50px;
     left: 7px;
     border-radius: 9px;
+    z-index: 5;
 }
 .drpdown.show{
     display:flex;
@@ -182,15 +194,122 @@ footer{
     bottom: 0;
     width: 100%;
     background-color: black;
-    height: 50px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    /* padding:0px 1rem;
-    gap: 1rem; */
+    justify-content: space-around;
+    padding: .6rem 0px;
+}
+footer a svg{
+    font-size: large;
+    color:white;
+}
+.active svg{
+    transition: 150ms;
+    transform: scale(1.4);
 }
 .profile-set img{
     height: 35px;
     width: 35px;
     border-radius: 50%;
+}
+.active .profile-set img{
+    transition: 100ms;
+    outline: 2px solid white;
+    outline-offset: 2px;
+}
+.profile-page header{
+    display: flex;
+    justify-content: space-between;
+    padding:1rem .5rem;
+    align-items: center;
+}
+.profile-page header .left{
+    display: flex;
+}
+.profile-page h1{
+    font-size: 1.3rem;
+}
+.profile-page .right{
+    display: flex;
+    gap: 1rem;
+}
+.prof-info{
+    display: flex;
+    padding: .5rem;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1.5rem;
+}
+.prof-info img{
+    border-radius: 50%;
+    width: 100px;
+}
+.counts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.counts div{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+label{
+    font-size: .8rem;
+}
+.bio{
+    padding-left: .5rem;
+}
+.hashtags{
+    color: rgb(34, 156, 255);
+    text-decoration: none;
+}
+.prof-buttons{
+    display: flex;
+    width: 100%;
+    gap: .5rem;
+    padding: 0px .5rem;
+    margin: 1rem 0px;
+}
+.prof-buttons button{
+    flex: 1;
+    background-color: rgb(43, 43, 43);
+    color: inherit;
+    outline: none;
+    border: none;
+    border-radius: 12px;
+    padding: .3rem 0px;
+    font-size: .8rem;
+}
+button.addfollowing{
+    flex: .3;
+}
+.highlights{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: .5rem;
+    overflow-x: scroll;
+    margin: 1rem 0px;
+}
+.newhigh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    gap: 5px;
+}
+.addhightlights{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 200;
+    border: 1px solid white;
+}
+.newhigh p{
+    font-size: .8rem;
 }

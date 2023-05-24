@@ -3,7 +3,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import MarkChatUnreadOutlinedIcon from '@mui/icons-material/MarkChatUnreadOutlined';
-
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 function Header(){
 
@@ -18,7 +18,7 @@ const show = showed ? 'show' : '';
    return<header>
         <div className='logo' onClick={handleShow}>
           <img className='nameLogo' src={require('./images/insta_name_logo.png')}/>
-          <p>⌄</p>
+          <ArrowDropDownIcon/>
         </div>
         <div className={`drpdown ${show}`}>
           <a href="#">

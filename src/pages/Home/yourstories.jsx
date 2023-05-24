@@ -1,5 +1,5 @@
 import React from 'react';
-import Pdetails from './personaldetails';
+import Pdetails from '../../details/personaldetails';
 
 function YourStorie(){
     return <div className='storie'>

@@ -35,7 +35,7 @@ return         <div className="post">
                 </div>
                 <MoreVertIcon/>
             </div>
-            <img className="pic" src={img}/>
+            <img className="pic" src={img} onDoubleClick={handleLike} />
             <div className="buttons">
                 <div className="left">
                     <div className="like" onClick={handleLike}>
