@@ -344,15 +344,24 @@ button.addfollowing{
     place-content: center;
     margin: .5rem;
     padding: .3rem;
+    gap: 20px;
 }
 .profile-page .buttons .btn{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.profile-page .buttons .btn svg{
+    color: rgba(255, 255, 255, 0.458);
+}
 .profile-page .buttons .btn.active svg{
     transition: 100ms;
-    transform: scale(1.1);
+    color: white;
+}
+.profile-page .bar{
+    background-color: white;
+    width: calc(100% / 3);
+    height: 2px;
 }
 .profile-page .contents {
     overflow-x: hidden;

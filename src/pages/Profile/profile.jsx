@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Pdetails from "../../details/personaldetails";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
@@ -10,29 +10,43 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import Posts from "./posts";
 import Reels from "./reels";
 import Tags from "./tags";
-import { useRef } from "react";
+
 
 export default function Profile(){
     const contentsRef = useRef(null);
 
     const handleButtonClick = (index) => {
         const container = contentsRef.current;
-        if (container) {
-          const scrollAmount = index * window.innerWidth;
-          container.scrollTo({
-            left: scrollAmount,
-            behavior: 'smooth',
-          });
-        }
-        const buttons = document.getElementsByClassName('btn');
-        for (let i = 0; i < buttons.length; i++) {
-            if (i === index) {
-                buttons[i].classList.add('active');
-            } else {
-                buttons[i].classList.remove('active');
-        }
-    }
+        const scrollAmount = index * window.innerWidth;
+        container.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth',
+        });
       };
+
+
+
+      const [activeIndex, setActiveIndex] = useState(0);
+
+      useEffect(() => {
+        const handleScroll = () => {
+          const container = contentsRef.current;
+          const scrollOffset = container.scrollLeft;
+          const currentIndex = Math.floor(scrollOffset / window.innerWidth);
+          const bar = document.querySelector('.bar');
+          const marginLeft = scrollOffset * (33.33 / 100);
+          bar.style.marginLeft = `${marginLeft}px`;
+          setActiveIndex(currentIndex);
+        };
+    
+        const container = contentsRef.current;
+        container.addEventListener('scroll', handleScroll);
+        return () => {
+          container.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
+
+      
     return (
         <div className="profile-page">
             <header>
@@ -79,10 +93,11 @@ export default function Profile(){
                 </div>
             </div>
         <div className="buttons">
-            <div className="btn active" onClick={() => handleButtonClick(0)}><GridOnIcon/></div>
-            <div className="btn" onClick={() => handleButtonClick(1)}><MovieCreationOutlinedIcon/></div>
-            <div className="btn" onClick={() => handleButtonClick(2)}><PersonPinIcon/></div>
+            <div className={`p btn ${activeIndex === 0 ? 'active' : ''}`} onClick={() => handleButtonClick(0)}><GridOnIcon /></div>
+            <div className={`r btn ${activeIndex === 1 ? 'active' : ''}`} onClick={() => handleButtonClick(1)}><MovieCreationOutlinedIcon /></div>
+            <div className={`t btn ${activeIndex === 2 ? 'active' : ''}`} onClick={() => handleButtonClick(2)}><PersonPinIcon /></div>
         </div>
+        <div className="bar"></div>
         <div className="contents ">
             <div className="contents-container" ref={contentsRef}>
                 <div className="Posts-container"><Posts/></div>
