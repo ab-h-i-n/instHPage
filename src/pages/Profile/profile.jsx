@@ -32,7 +32,7 @@ export default function Profile(){
         const handleScroll = () => {
           const container = contentsRef.current;
           const scrollOffset = container.scrollLeft;
-          const currentIndex = Math.floor((scrollOffset + 200) / window.innerWidth);
+          const currentIndex = Math.floor((scrollOffset + 250) / window.innerWidth);
           const bar = document.querySelector('.bar');
           const marginLeft = scrollOffset * (33.33 / 100);
           bar.style.marginLeft = `${marginLeft}px`;
