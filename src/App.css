@@ -30,8 +30,11 @@ body,
     overflow-x: scroll;
     display: flex;
     scroll-snap-type: x mandatory;
+
 }
 .home{
+    overflow-y: scroll;
+    max-height: 100vh;
     scroll-snap-align: start;
     flex-shrink: 0;
     width: 100vw;
