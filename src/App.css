@@ -26,6 +26,28 @@ body,
 .noSelect:focus {
     outline: none !important;
 }
+.home-page{
+    overflow-x: scroll;
+    display: flex;
+    scroll-snap-type: x mandatory;
+}
+.home{
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100vw;
+}
+.direct{
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    height: 100vh;
+    width: 100vw;
+    font-size: large;
+    font-weight: bold;
+    flex-shrink: 0;
+}
 header{
     position: relative;
     width: 100%;
@@ -341,6 +363,7 @@ button.addfollowing{
 .Posts-container,
 .Reels-container,
 .Tags-container{
+    scroll-snap-stop: always;
     scroll-snap-align: start;
     display: flex;
     justify-content: center;
@@ -352,3 +375,7 @@ button.addfollowing{
 .Posts-container{background-color: red;}
 .Reels-container{background-color: blue;}
 .Tags-container{background-color: green;}
+
+
+
+

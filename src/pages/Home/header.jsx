@@ -15,6 +15,13 @@ const handleShow = ()=>{
 }
 const show = showed ? 'show' : '';
 
+
+const handleDirectbtn = () => {
+  // Use `scrollIntoView` to scroll the element into view
+  const homePageElement = document.querySelector('.direct');
+  homePageElement.scrollIntoView({ behavior: 'smooth', inline: 'end' });
+};
+
    return<header>
         <div className='logo' onClick={handleShow}>
           <img className='nameLogo' src={require('./images/insta_name_logo.png')}/>
@@ -32,7 +39,7 @@ const show = showed ? 'show' : '';
         </div>
         <div className='icons'>
             <FavoriteBorderIcon/>
-            <MarkChatUnreadOutlinedIcon/>
+            <MarkChatUnreadOutlinedIcon onClick={handleDirectbtn}/>
         </div>
 </header>
 }
